@@ -24,6 +24,7 @@ public class Tir : MonoBehaviour {
             {
                 // Calcul de la direction du tir
                 Vector3 directionDeTir = (hit.point - this.transform.position);
+                directionDeTir.y = 0f;
 
                 // Instanciation d'une projectile a la position de cet objet + direction du tir pour eviter de mettre la projectile dans le joueur
                 GameObject nouveauProjectile = Instantiate(PrefabProjectile, this.transform.position + directionDeTir.normalized, Quaternion.identity) as GameObject;
