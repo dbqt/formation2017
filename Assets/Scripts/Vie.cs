@@ -9,38 +9,48 @@ public class Vie : MonoBehaviour {
 
     public int viesRestantes;
 
+    // References pour les collisions
     private bool collided;
     private GameObject collidedObject;
 
 	// Use this for initialization
 	void Start () {
+        // Initialiser les valeurs de depart
 		viesRestantes = nombreViesDepart;
         collided = false;
 	}
 
     void Update() {
+        // S'il y a une collision
         if(collided) 
         {
-            viesRestantes--;
+            // Reduire le nombre de vies
+            // ...
+
+            // Si l'objet de collision n'est pas nul, la détuire
             if (collidedObject != null)
             { 
-                Destroy(collidedObject);
+                // ...
             }
 
+            // using Unity.Engine.SceneManagement, load 
             if (viesRestantes <= 0) {
-                Debug.Log("Game over!");
-                SceneManager.LoadScene("main");
+                //...
 
             }
+
+            // mettre collided = false apres avoir faire le traitement
             collided = false;
         }
     }
 
-    // Detection de collision avec le joueur
-	void OnCollisionEnter(Collision other) {
+    // Detection de collision
+	void OnTriggerEnter(Collider other) {
+        // si le joueur entre en collision avec un asteroide
         if (other.gameObject.CompareTag("Asteroide"))
         {
-            collidedObject = other.gameObject;
+            // mettre une reference vers l'objet a collisionner
+            //collidedObject = other.gameObject;
             collided = true;
         }
     }

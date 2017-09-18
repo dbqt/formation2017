@@ -27,9 +27,9 @@ public class Tir : MonoBehaviour {
                 directionDeTir.y = 0f;
 
                 // Instanciation d'une projectile a la position de cet objet + direction du tir pour eviter de mettre la projectile dans le joueur
-                GameObject nouveauProjectile = Instantiate(PrefabProjectile, this.transform.position + directionDeTir.normalized, Quaternion.identity) as GameObject;
-                // Donner une vitesse a la projectile
-                nouveauProjectile.GetComponent<Rigidbody>().velocity = directionDeTir.normalized * VitesseDeTir;
+                // ...
+                // Donner une vitesse a la projectile avec vitesse de tir et la direction normalisee
+                // ...
 
             }
 

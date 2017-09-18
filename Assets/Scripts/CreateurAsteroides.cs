@@ -14,16 +14,23 @@ public class CreateurAsteroides : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Invoke("CreerAsteroide", Random.Range(minTemps, maxTemps));
+
+        // Premier appel pour creer un asteroide
+		//Invoke("CreerAsteroide", Random.Range(minTemps, maxTemps));
 	}
 
 
     public void CreerAsteroide() {
 
         // Initialiser la position
-        Vector3 position = Vector3.zero;
-        int mur = Random.Range(0,3);
-        switch (mur) {
+        // Creer un vecteur zero
+        // ...
+
+        // Choisir un mur au hasard entre 0 et 3
+        // ...
+
+        // Faire un switch sur le mur et appliquer les positions
+        /*switch (mur) {
             case 0:
                 position.x = Random.Range(minX, maxX);
                 position.z = minZ;
@@ -40,12 +47,12 @@ public class CreateurAsteroides : MonoBehaviour {
                 position.x = maxX;
                 position.z = Random.Range(minZ, maxZ);
             break;
-        }
+        }*/
 
-        // Creer l'asteroide
-        Instantiate(AsteroidPrefab, position, Quaternion.identity);
+        // Creer l'asteroide avec Instantiate et la nouvelle position
+        // ...
 
-        // Prochain appel de CreerAsteroide
-        Invoke("CreerAsteroide", Random.Range(minTemps, maxTemps));
+        // Prochain appel de CreerAsteroide apres un temps random
+        // ...
     }
 }
